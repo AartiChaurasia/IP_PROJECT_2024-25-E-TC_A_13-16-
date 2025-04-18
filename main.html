@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Notes App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Notes App</h1>
+        <button onclick="toggleDarkMode()" class="btn" style="background-color: #1512128f; color: rgb(255, 255, 255); margin: 10px;">Toggle Dark Mode</button>
+        <input type="text" id="title" class="text" placeholder="Title">
+        <textarea id="notes" class="text" placeholder="Write Note"></textarea>
+        <button onclick="saveData()" class="btn">Save Note</button>
+    </div>
+
+    <div class="container">
+        <h2>Saved Notes</h2>
+        <div id="notesContainer" class="notes-container"></div>
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>

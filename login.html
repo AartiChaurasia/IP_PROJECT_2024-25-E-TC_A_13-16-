@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Login</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    color: black;
+    font-size: 1.5rem;
+    background-color: #444242f1;
+    background:url(https://miro.medium.com/v2/resize:fit:1033/1*D9iAkPupg4NF4cE3rcPjGA.png);
+    background-size: cover; 
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.main-form{
+    border-radius: 10px;
+    height: 50vh;
+    width: 40vw;
+    gap: 2rem;
+    border: none;
+    border: 2px solid rgb(255,255,255,0.9);
+    background-color:rgba(255, 218, 218, 0.26) ;
+    /* background-color:rgba(218, 233, 255, 0.7) ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0 , 0, 0, 0.6);
+}
+
+h1{
+    text-align: center;
+    margin-top: 5px;
+    color: #3d3d3d;
+    font-size: 1.5rem;
+}
+
+.form{
+    column-gap: 2rem;
+    margin: 0;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-size: 1.3rem;
+    font-weight: 550;
+}
+
+#pass-word, #user-name{
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: none;
+    background-color:aliceblue;
+}
+
+.keep{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.keep span{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#cb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.btn .button{
+    width: 9rem;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    background-color: rgb(121, 192, 255);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn .button:hover{
+    color: rgb(10, 133, 241);
+    background-color: bisque;
+    border: none;
+}
+
+/* For Tablets (Portrait and Landscape) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .main-form {
+        width: 80vw;
+        height: 60vh;
+    }
+    
+    h1{
+        text-align: center;
+        margin-top: 5px;
+        color: #3d3d3d;
+        font-size: larger;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .btn .button {
+        width: 7rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .btn .button:hover{
+        color: rgb(10, 133, 241);
+        background-color: bisque;
+        border: none;
+    }
+}
+
+/* For Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .main-form {
+        width: 90vw;
+        height: auto;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .label {
+        font-size: 1.1rem;
+    }
+
+    #pass-word, #user-name {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .keep span{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .btn .button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+
+    .btn .button:hover{
+        color: rgb(10, 133, 241);
+        background-color: bisque;
+        border: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-form">
+            <h1>SignIn/Registration</h1>
+            <div class="form">
+                <div class="user">
+                    <label for="Username" class="label">Username:</label>
+                    <input type="text" id="user-name" placeholder="Enter Username" value="">
+                </div>
+                <div class="pass">
+                    <label for="PassWord" class="label">Password :</label>
+                    <input type="password" id="pass-word" placeholder="Enter Password" value="">
+                </div>
+            </div>
+            <div class="btn">
+                <button class="button" id="signup-btn"><span>SignUp</span></button>
+                <button class="button" id="signin-btn"><span>Login</span></button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let userName = document.querySelector('#user-name');
+let passWord = document.querySelector('#pass-word');
+let signUp = document.querySelector('#signup-btn');
+let signIn = document.querySelector('#signin-btn');
+let check = document.querySelector('#cb');
+
+signUp.addEventListener('click', ()=>{
+    if(userName.value === "" || passWord.value ===""){
+        alert("Plese fill the Credentials")
+    } else{
+        localStorage.setItem("username", userName.value)
+        localStorage.setItem("password", passWord.value)
+        alert("Successfully sign up")
+    }
+})
+signIn.addEventListener('click', ()=>{
+    if(userName.value === "" || passWord.value ===""){
+        alert("Plese fill the Credentials")
+    } else if(localStorage.getItem("username", userName.value) && localStorage.getItem("password", passWord.value)){
+        alert("Successfully Login")
+        window.location.href = "main.html"
+    }else{
+        alert("Invalid credentials")
+    }
+})
+    </script>
+</body>
+</html>

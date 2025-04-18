@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url(https://miro.medium.com/v2/resize:fit:1033/1*D9iAkPupg4NF4cE3rcPjGA.png);
+    /* background-color: rgb(19, 117, 255); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 50vw;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: rgba(147, 204, 255, 0.4);
+    box-shadow: 5px 5px 15px gray;
+}
+
+.text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: aliceblue;
+}
+
+textarea.text {
+    height: 80px;
+}
+
+.btn {
+    background: rgb(254, 235, 219, 0.9);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn:hover {
+    background: rgba(3, 44, 254, 0.5);
+}
+
+.notes-container {
+    margin-top: 20px;
+}
+
+.note {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px gray;
+    position: relative;
+}
+
+.note h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.note .date {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.dark-mode {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #444;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode .text {
+    background: #666;
+    color: white;
+    border-color: #888;
+}
+
+.dark-mode .note {
+    background: #555;
+    color: white;
+    border-color: #777;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90vw;
+    }
+    body{
+        background: none;
+        background-color: aliceblue;
+    }
+}
